@@ -14,8 +14,6 @@ namespace Avantica.Data
         {
         }
 
-        public DbSet<Avantica.Models.Properties> Properties { get; set; }
-
-        public DbSet<Avantica.Models.User> User { get; set; }
+        public DbSet<Properties> Properties { get; set; }
     }
 }

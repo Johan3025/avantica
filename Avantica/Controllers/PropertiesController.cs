@@ -147,6 +147,10 @@ namespace Avantica.Controllers
 
             var properties = context.Properties.FirstOrDefault(x => x.Address == id);
 
+            double? result = Convert.ToDouble(properties.Monthly_Rent) * 12 / Convert.ToDouble(properties.List_Price);
+
+            properties.Gross_Yield = result.ToString();
+
             if (properties == null)
             {
                 return NotFound();
