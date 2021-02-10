@@ -1,0 +1,49 @@
+﻿@model Avantica.Models.Properties
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Properties</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Address" />
+            <div class="form-group">
+                <label asp-for="Year_Built" class="control-label"></label>
+                <input asp-for="Year_Built" class="form-control" />
+                <span asp-validation-for="Year_Built" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="List_Price" class="control-label"></label>
+                <input asp-for="List_Price" class="form-control" />
+                <span asp-validation-for="List_Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monthly_Rent" class="control-label"></label>
+                <input asp-for="Monthly_Rent" class="form-control" />
+                <span asp-validation-for="Monthly_Rent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gross_Yield" class="control-label"></label>
+                <input asp-for="Gross_Yield" class="form-control" />
+                <span asp-validation-for="Gross_Yield" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

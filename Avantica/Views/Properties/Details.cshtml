@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Avantica.Models.Properties>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Database Information</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year_Built)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.List_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monthly_Rent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gross_Yield)
+            </th>
+            <th class="text-left">
+                Actions
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year_Built)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.List_Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monthly_Rent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gross_Yield)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Address">Edit</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+    <br/>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
