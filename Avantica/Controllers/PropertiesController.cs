@@ -46,9 +46,12 @@ namespace Avantica.Controllers
             }
 
             return View(datos);
-            //return View(await context.Properties.ToListAsync());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private async Task<Application> Firstprocess()
         {
             Uri url = new Uri("https://samplerspubcontent.blob.core.windows.net/public/properties.json");
@@ -63,6 +66,11 @@ namespace Avantica.Controllers
             return null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
         private async Task<string> ConsumeServiceGetAsync(Uri url)
         {
             using var httpClient = new HttpClient();
