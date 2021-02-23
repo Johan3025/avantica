@@ -1,20 +1,20 @@
 # avantica
-Proyecto Avantica
-Proyecto que consume servicio externo del cliente y toma esta información para mostrarla y guardarla(Crud).
+Avantica project
+Project that consumes external customer service and takes this information to display and save it (Crud).
 
-Instalación 🔧
-Solo descargar y ejecutar el código.
+Installation 🔧
+Just download and run the code.
 
-Construido con 🛠️
+Built with 🛠️
 Asp.net Mvc, c#, swagger, entity framwork, bootstrap, razor.
 
-Autores ✒️
+Author ✒️
 Johan Ospina Nuñez.
 
-Licencia 📄
+License 📄
 MIT
 
-Expresiones de Gratitud 🎁
-Comenta a otros sobre este proyecto 📢
-Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
-Da las gracias públicamente 🤓.
+Expressions of Gratitude 🎁
+Tell others about this project 📢
+Invite a beer 🍺 or a coffee ☕ someone on the team.
+Give thanks publicly 🤓.
