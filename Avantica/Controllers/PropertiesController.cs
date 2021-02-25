@@ -1,4 +1,13 @@
-﻿using Avantica.Data;
+﻿// ----------------------------------------------------------------------------
+// <copyright file="PropertiesController.cs" company="Encora S.A">
+//     COPYRIGHT(C) 2020, Encora S.A
+// </copyright>
+// <author>Johan Ospina Nuñez</author>
+// <email>jospina@Encora.com.</email>
+// <summary>Properties controller</summary>
+// ----------------------------------------------------------------------------
+
+using Avantica.Data;
 using Avantica.Models.WebApplication3.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,9 +32,13 @@ namespace Avantica.Controllers
         }
 
         // GET: Properties
+        /// <summary>
+        /// Get to bring service data
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-            var respuesta = await Firstprocess().ConfigureAwait(false);
+            var respuesta = await CallToConsumeWebService().ConfigureAwait(false);
             List<Properties> datos = new List<Properties>();
 
             foreach (var item in respuesta.properties)
@@ -49,10 +62,10 @@ namespace Avantica.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Process to consume web service
         /// </summary>
         /// <returns></returns>
-        private async Task<Application> Firstprocess()
+        private async Task<Application> CallToConsumeWebService()
         {
             Uri url = new Uri("https://samplerspubcontent.blob.core.windows.net/public/properties.json");
 
@@ -67,7 +80,7 @@ namespace Avantica.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Consume External Service
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
@@ -83,16 +96,25 @@ namespace Avantica.Controllers
         }
 
         // GET: Properties/Details/5
+        /// <summary>
+        /// Process that shows info insert in database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(string id)
         {
-
             return View(await context.Properties.ToListAsync());
         }
 
         // GET: Properties/Create
+        /// <summary>
+        /// Process to load service information in View
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Create(string id)
         {
-            var respuesta = await Firstprocess().ConfigureAwait(false);
+            var respuesta = await CallToConsumeWebService().ConfigureAwait(false);
             List<Properties> datos = new List<Properties>();
             Properties properties = null;
 
@@ -125,8 +147,11 @@ namespace Avantica.Controllers
         }
 
         // POST: Properties/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// method to insert information in dtabase
+        /// </summary>
+        /// <param name="properties"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Properties properties)
@@ -146,6 +171,11 @@ namespace Avantica.Controllers
         }
 
         // GET: Properties/Edit/5
+        /// <summary>
+        /// method to load information in form to update
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Edit(string id)
         {
             if (id == null)
@@ -168,8 +198,12 @@ namespace Avantica.Controllers
         }
 
         // POST: Properties/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// method to update database information.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="properties"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, Properties properties)
@@ -202,6 +236,11 @@ namespace Avantica.Controllers
             return View(properties);
         }
 
+        /// <summary>
+        /// method to check if property exists
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool PropertiesExists(string id)
         {
             return context.Properties.Any(e => e.Address == id);

@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// ----------------------------------------------------------------------------
+// <copyright file="AvanticaContext.cs" company="Encora S.A">
+//     COPYRIGHT(C) 2020, Encora S.A
+// </copyright>
+// <author>Johan Ospina Nuñez</author>
+// <email>jospina@Encora.com.</email>
+// <summary>structures data</summary>
+// ----------------------------------------------------------------------------
 
 namespace Avantica.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     namespace WebApplication3.Models
     {
+
+        /// <summary>
+        /// Structure Address
+        /// </summary>
         public class Address
         {
             public string address1 { get; set; }
@@ -25,6 +31,10 @@ namespace Avantica.Models
             public string zipPlus4 { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure financial
+        /// </summary>
         public class Financial
         {
             public string capRate { get; set; }
@@ -47,6 +57,10 @@ namespace Avantica.Models
             public bool? isCashOnly { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure Physical
+        /// </summary>
         public class Physical
         {
             public string bathRooms { get; set; }
@@ -61,6 +75,10 @@ namespace Avantica.Models
             public string zipYearBuilt { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure score
+        /// </summary>
         public class Score
         {
             public string conditionScore { get; set; }
@@ -74,6 +92,10 @@ namespace Avantica.Models
             public string walkabilityScore { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure valuation
+        /// </summary>
         public class Valuation
         {
             public string avmBpoValue { get; set; }
@@ -84,6 +106,10 @@ namespace Avantica.Models
             public string rsBpoMergeValue { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure photos
+        /// </summary>
         public class Photos
         {
             public int id { get; set; }
@@ -100,6 +126,10 @@ namespace Avantica.Models
             public string textContent { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure fllorplans
+        /// </summary>
         public class FloorPlans
         {
             public int id { get; set; }
@@ -116,6 +146,10 @@ namespace Avantica.Models
             public string textContent { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure Resources.
+        /// </summary>
         public class Resources
         {
             public IList<Photos> photos { get; set; }
@@ -125,7 +159,9 @@ namespace Avantica.Models
 
         }
 
-
+        /// <summary>
+        /// Structure threeDRenderings
+        /// </summary>
         public class threeDRenderings
         {
             public int id { get; set; }
@@ -142,6 +178,9 @@ namespace Avantica.Models
             public string textContent { get; set; }
         }
 
+        /// <summary>
+        /// Structure LeaseSummary
+        /// </summary>
         public class LeaseSummary
         {
             public string occupancy { get; set; }
@@ -165,6 +204,10 @@ namespace Avantica.Models
             public string isTenantPurchaseOption { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure utilitiesownership
+        /// </summary>
         public class UtilitiesOwnership
         {
             public string electric { get; set; }
@@ -174,8 +217,11 @@ namespace Avantica.Models
             public string pool { get; set; }
             public string landscaping { get; set; }
             public string pestControl { get; set; }
-
         }
+
+        /// <summary>
+        /// Structure Applicationownership
+        /// </summary>
         public class ApplianceOwnership
         {
             public string refrigerator { get; set; }
@@ -186,6 +232,10 @@ namespace Avantica.Models
             public string stove { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure Lease
+        /// </summary>
         public class Lease
         {
             public LeaseSummary leaseSummary { get; set; }
@@ -193,6 +243,10 @@ namespace Avantica.Models
             public ApplianceOwnership applianceOwnership { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure GoogleMapOption
+        /// </summary>
         public class GoogleMapOption
         {
             public bool hasStreetView { get; set; }
@@ -202,6 +256,10 @@ namespace Avantica.Models
             public double povLongitude { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure Properties
+        /// </summary>
         public class Properties
         {
             public int id { get; set; }
@@ -260,6 +318,10 @@ namespace Avantica.Models
             public string inspectionType { get; set; }
 
         }
+
+        /// <summary>
+        /// Structure Application
+        /// </summary>
         public class Application
         {
             public IList<Properties> properties { get; set; }

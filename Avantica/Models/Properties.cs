@@ -1,4 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// ----------------------------------------------------------------------------
+// <copyright file="Properties.cs" company="Encora S.A">
+//     COPYRIGHT(C) 2020, Encora S.A
+// </copyright>
+// <author>Johan Ospina Nuñez</author>
+// <email>jospina@Encora.com.</email>
+// <summary>properties entity model</summary>
+// ----------------------------------------------------------------------------
+
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Avantica.Models
